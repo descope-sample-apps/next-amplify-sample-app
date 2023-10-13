@@ -1,4 +1,4 @@
-<img width="1400" alt="Monosnap Github Profile Header Generator 2023-07-20 23-09-34" src="https://github.com/descope-sample-apps/cognito-next-sample-app/assets/32936811/5eeb4ba7-638d-444b-a431-4b6749af1cbe">
+<img width="1400" alt="Descope and Cognito Repo Banner" src="https://github.com/descope-sample-apps/next-amplify-sample-app/assets/32936811/e1e092f2-29a6-4ef2-b483-2c9abd7590d8">
 
 ---
 
