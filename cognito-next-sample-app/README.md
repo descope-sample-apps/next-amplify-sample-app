@@ -31,7 +31,7 @@ git clone https://github.com/descope-sample-apps/cognito-next-sample-app.git
 2. Install dependencies:
 
 ```bash
-npm install
+yarn install
 ```
 
 3. Setup environment variables:
@@ -47,7 +47,7 @@ Use the `.env.example` file in the repo, and change the name to `.env`. Then, fi
 To start the application, run:
 
 ```bash
-npm run dev
+yarn dev
 ```
 
 Navigate to `http://localhost:3000/` in your browser.

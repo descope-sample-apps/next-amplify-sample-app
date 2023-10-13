@@ -12,22 +12,11 @@ import Widget from 'components/widget/Widget';
 import DailyTraffic from 'components/admin/default/DailyTraffic';
 import TaskCard from 'components/admin/default/TaskCard';
 
-import { headers } from 'next/headers';
-import { withSSRContext } from 'aws-amplify';
+import { withAuthenticator } from '@aws-amplify/ui-react';
 import { redirect } from 'next/navigation';
 
-async function Dashboard() {
-  const req = {
-    headers: {
-      cookie: headers().get('cookie'),
-    },
-  };
-
-  const { Auth } = withSSRContext({ req });
-
-  try {
-    console.log('Hello');
-    const user = await Auth.currentAuthenticatedUser();
+const Dashboard = ({ signOut, user }) => {
+  if (user) {
     return (
       <div>
         {/* Card widget */}
@@ -93,10 +82,9 @@ async function Dashboard() {
         </div>
       </div>
     );
-  } catch (error) {
-    console.log(error);
+  } else {
     redirect('/auth/sign-in');
   }
-}
+};
 
 export default Dashboard;
