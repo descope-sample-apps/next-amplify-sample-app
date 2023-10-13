@@ -1,0 +1,56 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-cognitonextsampleapp-dev-131742-authRole",
+      "UnauthRoleArn": "arn:aws:iam::882548883321:role/amplify-cognitonextsampleapp-dev-131742-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::882548883321:role/amplify-cognitonextsampleapp-dev-131742-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-cognitonextsampleapp-dev-131742-deployment",
+      "UnauthRoleName": "amplify-cognitonextsampleapp-dev-131742-unauthRole",
+      "StackName": "amplify-cognitonextsampleapp-dev-131742",
+      "StackId": "arn:aws:cloudformation:us-west-2:882548883321:stack/amplify-cognitonextsampleapp-dev-131742/672d99a0-693c-11ee-976f-063e3d9bf72f",
+      "AmplifyAppId": "dt5wlsgy2yi63"
+    }
+  },
+  "auth": {
+    "cognitonextsampleapp": {
+      "service": "Cognito",
+      "serviceType": "imported",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "output": {
+        "UserPoolId": "us-west-2_9zg6v9L1o",
+        "UserPoolName": "sample-app-prod",
+        "AppClientID": "hc41tcvou8203iqtuub08rtnn",
+        "AppClientIDWeb": "hc41tcvou8203iqtuub08rtnn",
+        "HostedUIDomain": "sample-app-prod",
+        "OAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"email\",\"openid\",\"phone\"],\"CallbackURLs\":[\"http://localhost:3000/dashboard\",\"https://main.d1rua11q42kscj.amplifyapp.com/dashboard\"],\"LogoutURLs\":[\"https://main.d1rua11q42kscj.amplifyapp.com/\"]}"
+      },
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": [
+            "REQUIRES_LOWERCASE",
+            "REQUIRES_UPPERCASE",
+            "REQUIRES_NUMBERS",
+            "REQUIRES_SYMBOLS"
+          ]
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "lastPushTimeStamp": "2023-10-13T02:18:19.399Z"
+    }
+  }
+}

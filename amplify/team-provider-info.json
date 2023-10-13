@@ -1,0 +1,26 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-cognitonextsampleapp-dev-131742-authRole",
+      "UnauthRoleArn": "arn:aws:iam::882548883321:role/amplify-cognitonextsampleapp-dev-131742-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::882548883321:role/amplify-cognitonextsampleapp-dev-131742-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-cognitonextsampleapp-dev-131742-deployment",
+      "UnauthRoleName": "amplify-cognitonextsampleapp-dev-131742-unauthRole",
+      "StackName": "amplify-cognitonextsampleapp-dev-131742",
+      "StackId": "arn:aws:cloudformation:us-west-2:882548883321:stack/amplify-cognitonextsampleapp-dev-131742/672d99a0-693c-11ee-976f-063e3d9bf72f",
+      "AmplifyAppId": "dt5wlsgy2yi63"
+    },
+    "categories": {
+      "auth": {
+        "cognitonextsampleapp6a47a44c": {},
+        "cognitonextsampleapp": {
+          "userPoolId": "us-west-2_9zg6v9L1o",
+          "userPoolName": "sample-app-prod",
+          "webClientId": "hc41tcvou8203iqtuub08rtnn",
+          "nativeClientId": "hc41tcvou8203iqtuub08rtnn"
+        }
+      }
+    }
+  }
+}
