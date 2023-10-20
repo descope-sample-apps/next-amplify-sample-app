@@ -1,8 +1,35 @@
 import React, { ReactNode } from 'react';
 import AppWrappers from './AppWrappers';
-import { Amplify } from 'aws-amplify';
+import { Amplify, withSSRContext } from 'aws-amplify';
 import awsExports from '../aws-exports';
+
+// Amplify.configure({
+//   Auth: {
+//     region: process.env.NEXT_PUBLIC_AWS_REGION,
+//     userPoolId: process.env.NEXT_PUBLIC_USER_POOL_ID,
+//     userPoolWebClientId: process.env.NEXT_PUBLIC_USER_POOL_CLIENT_ID,
+//     mandatorySignIn: false,
+//     authenticationFlowType: 'USER_PASSWORD_AUTH',
+//     oauth: {
+//       domain: `${process.env.NEXT_PUBLIC_OAUTH_DOMAIN}.auth.us-west-2.amazoncognito.com`,
+//       scope: ['openid', 'email', 'phone', 'profile'],
+//       redirectSignIn: 'http://localhost:3000/',
+//       redirectSignOut: 'http://localhost:3000/',
+//       responseType: 'code',
+//     },
+//   },
+// });
+
 Amplify.configure({ ...awsExports, ssr: true });
+
+const { Auth } = withSSRContext();
+
+Auth.configure({
+  region: process.env.NEXT_PUBLIC_AWS_REGION,
+  userPoolId: process.env.NEXT_PUBLIC_USER_POOL_ID,
+  userPoolWebClientId: process.env.NEXT_PUBLIC_USER_POOL_CLIENT_ID,
+  mandatorySignIn: false,
+});
 
 export const metadata = {
   title: 'Descope + Cognito Next Sample App',

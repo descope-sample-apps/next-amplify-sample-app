@@ -43,11 +43,6 @@ const tableColumnsTopCreators: RowObj[] = [
     rating: 55,
   },
   {
-    name: ['@horizon.ui', 'https://i.ibb.co/NSJYQYD/Horizon-UI-Avatar.png'],
-    artworks: 3152,
-    rating: 46,
-  },
-  {
     name: [
       '@venus.sys',
       'https://scontent.fotp8-1.fna.fbcdn.net/v/t1.6435-9/202074221_101421322193072_8201469573182417214_n.png?_nc_cat=108&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=78fLje1ri2sAX-9M9k1&_nc_ht=scontent.fotp8-1.fna&oh=00_AT-yCcI9whoAZcSaGmJQK53xRa1CldCaj2q5qJlPvDvHRA&oe=626E41FF',

@@ -1,6 +1,6 @@
 {
-  "authSelections": "userPoolOnly",
-  "resourceName": "cognitonextsampleapp",
+  "authSelections": "identityPoolAndUserPool",
+  "resourceName": "nextamplifysampleapp",
   "serviceType": "imported",
   "region": "us-west-2",
   "usernameAttributes": [
@@ -11,12 +11,7 @@
     "email"
   ],
   "passwordPolicyMinLength": 8,
-  "passwordPolicyCharacters": [
-    "Requires Lowercase",
-    "Requires Uppercase",
-    "Requires Numbers",
-    "Requires Symbols"
-  ],
+  "passwordPolicyCharacters": [],
   "mfaConfiguration": "OFF",
   "autoVerifiedAttributes": [
     "email"

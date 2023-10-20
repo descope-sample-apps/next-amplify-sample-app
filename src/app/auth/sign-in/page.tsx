@@ -1,10 +1,37 @@
 'use client';
+import { useState } from 'react';
 import InputField from 'components/fields/InputField';
 import Default from 'components/auth/variants/DefaultAuthLayout';
-import { FcGoogle } from 'react-icons/fc';
+import Image from 'next/image';
+import DescopeLogo from '/public/img/auth/descope-logo.png';
 import Checkbox from 'components/checkbox';
+import { Amplify, Auth } from 'aws-amplify';
+import awsExports from '../../../aws-exports';
+
+Amplify.configure({ ...awsExports, ssr: true });
+
+export type FederatedSignInOptionsCustom = {
+  customProvider: string;
+  customState?: string;
+};
 
 function SignInDefault() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState(null);
+
+  const handleSignIn = async () => {
+    try {
+      const user = await Auth.signIn(email, password);
+      // handle successful sign in, perhaps by redirecting the user or changing the component state
+      console.log('User signed in:', user);
+    } catch (err) {
+      // handle errors, maybe set to a state variable and display to user
+      console.error('Error signing in:', err);
+      setError(err.message || 'An error occurred during sign-in.');
+    }
+  };
+
   return (
     <Default
       maincard={
@@ -17,14 +44,16 @@ function SignInDefault() {
             <p className="mb-9 ml-1 text-base text-gray-600">
               Enter your email and password to sign in!
             </p>
-            <div className="mb-6 flex h-[50px] w-full items-center justify-center gap-2 rounded-xl bg-lightPrimary hover:cursor-pointer dark:bg-navy-800 dark:text-white">
-              <div className="rounded-full text-xl">
-                <FcGoogle />
-              </div>
+            <button
+              onClick={() => Auth.federatedSignIn({ provider: 'Descope' })}
+              className="mb-6 flex h-[50px] w-full items-center justify-center gap-2 rounded-xl bg-lightPrimary hover:cursor-pointer dark:bg-navy-800 dark:text-white"
+            >
+              <div className="rounded-full text-xl"></div>
               <p className="text-sm font-medium text-navy-700 dark:text-white">
-                Sign In with Google
+                Sign In with
               </p>
-            </div>
+              <Image width="25" height="25" src={DescopeLogo} alt="Elon Musk" />
+            </button>
             <div className="mb-6 flex items-center  gap-3">
               <div className="h-px w-full bg-gray-200 dark:!bg-navy-700" />
               <p className="text-base text-gray-600"> or </p>
@@ -38,6 +67,7 @@ function SignInDefault() {
               placeholder="mail@simmmple.com"
               id="email"
               type="text"
+              onChange={(e) => setEmail(e.target.value)}
             />
 
             {/* Password */}
@@ -48,6 +78,7 @@ function SignInDefault() {
               placeholder="Min. 8 characters"
               id="password"
               type="password"
+              onChange={(e) => setPassword(e.target.value)}
             />
             {/* Checkbox */}
             <div className="mb-4 flex items-center justify-between px-2">
@@ -64,20 +95,12 @@ function SignInDefault() {
                 Forgot Password?
               </a>
             </div>
-            <button className="linear w-full rounded-xl bg-brand-500 py-3 text-base font-medium text-white transition duration-200 hover:bg-brand-600 active:bg-brand-700 dark:bg-brand-400 dark:text-white dark:hover:bg-brand-300 dark:active:bg-brand-200">
+            <button
+              onClick={handleSignIn}
+              className="linear w-full rounded-xl bg-brand-500 py-3 text-base font-medium text-white transition duration-200 hover:bg-brand-600 active:bg-brand-700 dark:bg-brand-400 dark:text-white dark:hover:bg-brand-300 dark:active:bg-brand-200"
+            >
               Sign In
             </button>
-            <div className="mt-4">
-              <span className="text-sm font-medium text-navy-700 dark:text-gray-500">
-                Not registered yet?
-              </span>
-              <a
-                href="/auth/sign-up/default"
-                className="ml-1 text-sm font-medium text-brand-500 hover:text-brand-600 dark:text-white"
-              >
-                Create an account
-              </a>
-            </div>
           </div>
         </div>
       }

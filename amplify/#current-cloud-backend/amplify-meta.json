@@ -1,31 +1,33 @@
 {
   "providers": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-cognitonextsampleapp-dev-131742-authRole",
-      "UnauthRoleArn": "arn:aws:iam::882548883321:role/amplify-cognitonextsampleapp-dev-131742-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::882548883321:role/amplify-cognitonextsampleapp-dev-131742-authRole",
+      "AuthRoleName": "amplify-nextamplifysampleapp-dev-92805-authRole",
+      "UnauthRoleArn": "arn:aws:iam::882548883321:role/amplify-nextamplifysampleapp-dev-92805-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::882548883321:role/amplify-nextamplifysampleapp-dev-92805-authRole",
       "Region": "us-west-2",
-      "DeploymentBucketName": "amplify-cognitonextsampleapp-dev-131742-deployment",
-      "UnauthRoleName": "amplify-cognitonextsampleapp-dev-131742-unauthRole",
-      "StackName": "amplify-cognitonextsampleapp-dev-131742",
-      "StackId": "arn:aws:cloudformation:us-west-2:882548883321:stack/amplify-cognitonextsampleapp-dev-131742/672d99a0-693c-11ee-976f-063e3d9bf72f",
-      "AmplifyAppId": "dt5wlsgy2yi63"
+      "DeploymentBucketName": "amplify-nextamplifysampleapp-dev-92805-deployment",
+      "UnauthRoleName": "amplify-nextamplifysampleapp-dev-92805-unauthRole",
+      "StackName": "amplify-nextamplifysampleapp-dev-92805",
+      "StackId": "arn:aws:cloudformation:us-west-2:882548883321:stack/amplify-nextamplifysampleapp-dev-92805/a681f9a0-6f65-11ee-b63c-06d22554bb49",
+      "AmplifyAppId": "d314pohyd9jj6b"
     }
   },
   "auth": {
-    "cognitonextsampleapp": {
+    "nextamplifysampleapp": {
       "service": "Cognito",
       "serviceType": "imported",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
       "customAuth": false,
       "output": {
-        "UserPoolId": "us-west-2_9zg6v9L1o",
-        "UserPoolName": "sample-app-prod",
-        "AppClientID": "hc41tcvou8203iqtuub08rtnn",
-        "AppClientIDWeb": "hc41tcvou8203iqtuub08rtnn",
-        "HostedUIDomain": "sample-app-prod",
-        "OAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"email\",\"openid\",\"phone\"],\"CallbackURLs\":[\"http://localhost:3000/dashboard\",\"https://main.d1rua11q42kscj.amplifyapp.com/dashboard\"],\"LogoutURLs\":[\"https://main.d1rua11q42kscj.amplifyapp.com/\"]}"
+        "UserPoolId": "us-west-2_ifNBNG0LI",
+        "UserPoolName": "cognitonextsampleapp08b582fa_userpool_08b582fa-dev",
+        "AppClientID": "363tqvhpan99kfdhub63l0di0k",
+        "AppClientIDWeb": "363tqvhpan99kfdhub63l0di0k",
+        "HostedUIDomain": "next-1-dev",
+        "IdentityPoolId": "us-west-2:5415a43b-3887-40fc-9ffc-4b1d292600f1",
+        "IdentityPoolName": "cognitonextsampleapp08b582fa_identitypool_08b582fa__dev",
+        "OAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"aws.cognito.signin.user.admin\",\"email\",\"openid\",\"phone\",\"profile\"],\"CallbackURLs\":[\"http://localhost:3000/auth/sign-in/\"],\"LogoutURLs\":[\"http://localhost:3000/\"]}"
       },
       "frontendAuthConfig": {
         "socialProviders": [],
@@ -37,12 +39,7 @@
         ],
         "passwordProtectionSettings": {
           "passwordPolicyMinLength": 8,
-          "passwordPolicyCharacters": [
-            "REQUIRES_LOWERCASE",
-            "REQUIRES_UPPERCASE",
-            "REQUIRES_NUMBERS",
-            "REQUIRES_SYMBOLS"
-          ]
+          "passwordPolicyCharacters": []
         },
         "mfaConfiguration": "OFF",
         "mfaTypes": [],
@@ -50,7 +47,7 @@
           "EMAIL"
         ]
       },
-      "lastPushTimeStamp": "2023-10-13T02:18:19.399Z"
+      "lastPushTimeStamp": "2023-10-20T20:44:56.910Z"
     }
   }
 }

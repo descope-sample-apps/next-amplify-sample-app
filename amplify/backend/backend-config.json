@@ -1,6 +1,6 @@
 {
   "auth": {
-    "cognitonextsampleapp": {
+    "nextamplifysampleapp": {
       "customAuth": false,
       "dependsOn": [],
       "providerPlugin": "awscloudformation",
@@ -9,35 +9,91 @@
     }
   },
   "parameters": {
-    "AMPLIFY_auth_cognitonextsampleapp_nativeClientId": {
+    "AMPLIFY_auth_nextamplifysampleapp_allowUnauthenticatedIdentities": {
       "usedBy": [
         {
           "category": "auth",
-          "resourceName": "cognitonextsampleapp"
+          "resourceName": "nextamplifysampleapp"
         }
       ]
     },
-    "AMPLIFY_auth_cognitonextsampleapp_userPoolId": {
+    "AMPLIFY_auth_nextamplifysampleapp_authRoleArn": {
       "usedBy": [
         {
           "category": "auth",
-          "resourceName": "cognitonextsampleapp"
+          "resourceName": "nextamplifysampleapp"
         }
       ]
     },
-    "AMPLIFY_auth_cognitonextsampleapp_userPoolName": {
+    "AMPLIFY_auth_nextamplifysampleapp_authRoleName": {
       "usedBy": [
         {
           "category": "auth",
-          "resourceName": "cognitonextsampleapp"
+          "resourceName": "nextamplifysampleapp"
         }
       ]
     },
-    "AMPLIFY_auth_cognitonextsampleapp_webClientId": {
+    "AMPLIFY_auth_nextamplifysampleapp_identityPoolId": {
       "usedBy": [
         {
           "category": "auth",
-          "resourceName": "cognitonextsampleapp"
+          "resourceName": "nextamplifysampleapp"
+        }
+      ]
+    },
+    "AMPLIFY_auth_nextamplifysampleapp_identityPoolName": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "nextamplifysampleapp"
+        }
+      ]
+    },
+    "AMPLIFY_auth_nextamplifysampleapp_nativeClientId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "nextamplifysampleapp"
+        }
+      ]
+    },
+    "AMPLIFY_auth_nextamplifysampleapp_unauthRoleArn": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "nextamplifysampleapp"
+        }
+      ]
+    },
+    "AMPLIFY_auth_nextamplifysampleapp_unauthRoleName": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "nextamplifysampleapp"
+        }
+      ]
+    },
+    "AMPLIFY_auth_nextamplifysampleapp_userPoolId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "nextamplifysampleapp"
+        }
+      ]
+    },
+    "AMPLIFY_auth_nextamplifysampleapp_userPoolName": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "nextamplifysampleapp"
+        }
+      ]
+    },
+    "AMPLIFY_auth_nextamplifysampleapp_webClientId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "nextamplifysampleapp"
         }
       ]
     }

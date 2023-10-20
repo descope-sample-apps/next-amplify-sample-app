@@ -1,17 +1,20 @@
 {
   "aws_project_region": "us-west-2",
+  "aws_cognito_identity_pool_id": "us-west-2:5415a43b-3887-40fc-9ffc-4b1d292600f1",
   "aws_cognito_region": "us-west-2",
-  "aws_user_pools_id": "us-west-2_9zg6v9L1o",
-  "aws_user_pools_web_client_id": "hc41tcvou8203iqtuub08rtnn",
+  "aws_user_pools_id": "us-west-2_ifNBNG0LI",
+  "aws_user_pools_web_client_id": "363tqvhpan99kfdhub63l0di0k",
   "oauth": {
-    "domain": "sample-app-prod.auth.us-west-2.amazoncognito.com",
+    "domain": "next-1-dev.auth.us-west-2.amazoncognito.com",
     "scope": [
+      "aws.cognito.signin.user.admin",
       "email",
       "openid",
-      "phone"
+      "phone",
+      "profile"
     ],
-    "redirectSignIn": "http://localhost:3000/dashboard,https://main.d1rua11q42kscj.amplifyapp.com/dashboard",
-    "redirectSignOut": "https://main.d1rua11q42kscj.amplifyapp.com/",
+    "redirectSignIn": "http://localhost:3000/auth/sign-in/",
+    "redirectSignOut": "http://localhost:3000/",
     "responseType": "code"
   },
   "federationTarget": "COGNITO_USER_POOLS",
@@ -26,12 +29,7 @@
   "aws_cognito_mfa_types": [],
   "aws_cognito_password_protection_settings": {
     "passwordPolicyMinLength": 8,
-    "passwordPolicyCharacters": [
-      "REQUIRES_LOWERCASE",
-      "REQUIRES_UPPERCASE",
-      "REQUIRES_NUMBERS",
-      "REQUIRES_SYMBOLS"
-    ]
+    "passwordPolicyCharacters": []
   },
   "aws_cognito_verification_mechanisms": [
     "EMAIL"
