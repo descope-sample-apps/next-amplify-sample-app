@@ -19,7 +19,7 @@ Amplify.configure({
       domain: `${process.env.NEXT_PUBLIC_OAUTH_DOMAIN}`,
       scope: ['openid', 'email', 'phone', 'profile'],
       redirectSignIn: 'http://localhost:3000/',
-      redirectSignOut: 'http://localhost:3000/',
+      redirectSignOut: 'http://localhost:3000/auth/sign-in/',
       responseType: 'code',
     },
   },
