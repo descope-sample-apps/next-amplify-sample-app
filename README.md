@@ -1,6 +1,7 @@
-<img width="1400" alt="Descope and Cognito Repo Banner" src="https://github.com/descope-sample-apps/next-amplify-sample-app/assets/32936811/e1e092f2-29a6-4ef2-b483-2c9abd7590d8">
+<img width="1400" alt="Descope and Cognito Banner" src="https://github.com/descope-sample-apps/next-amplify-sample-app/assets/32936811/774e28f6-93a4-484f-a58c-0c332b64080d">
 
 ---
+
 
 This sample app is an open-source sample app, built with Next 13 and the Amplify SDK. You can deploy this SSR app in Amplify with the button below. This project also showcases how to store and display user information on a dashboard page and use Next 13's app routing with the Amplify SDK.
 
