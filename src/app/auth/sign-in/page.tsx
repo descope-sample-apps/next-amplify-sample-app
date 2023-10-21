@@ -8,7 +8,23 @@ import Checkbox from 'components/checkbox';
 import { Amplify, Auth } from 'aws-amplify';
 import awsExports from '../../../aws-exports';
 
-Amplify.configure({ ...awsExports, ssr: true });
+Amplify.configure({
+  Auth: {
+    region: process.env.NEXT_PUBLIC_AWS_REGION,
+    userPoolId: process.env.NEXT_PUBLIC_USER_POOL_ID,
+    userPoolWebClientId: process.env.NEXT_PUBLIC_USER_POOL_CLIENT_ID,
+    mandatorySignIn: false,
+    authenticationFlowType: 'USER_PASSWORD_AUTH',
+    oauth: {
+      domain: `${process.env.NEXT_PUBLIC_OAUTH_DOMAIN}`,
+      scope: ['openid', 'email', 'phone', 'profile'],
+      redirectSignIn: 'http://localhost:3000/',
+      redirectSignOut: 'http://localhost:3000/',
+      responseType: 'code',
+    },
+  },
+  ssr: true,
+});
 
 export type FederatedSignInOptionsCustom = {
   customProvider: string;
@@ -45,7 +61,9 @@ function SignInDefault() {
               Enter your email and password to sign in!
             </p>
             <button
-              onClick={() => Auth.federatedSignIn({ provider: 'Descope' })}
+              onClick={() =>
+                Auth.federatedSignIn({ customProvider: 'Descope' })
+              }
               className="mb-6 flex h-[50px] w-full items-center justify-center gap-2 rounded-xl bg-lightPrimary hover:cursor-pointer dark:bg-navy-800 dark:text-white"
             >
               <div className="rounded-full text-xl"></div>

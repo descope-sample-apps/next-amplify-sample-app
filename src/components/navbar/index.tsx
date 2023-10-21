@@ -9,6 +9,8 @@ import avatar from '/public/img/avatars/avatar1.png';
 import Image from 'next/image';
 import { headers } from 'next/headers';
 import { redirect } from 'next/navigation';
+import { Auth } from 'aws-amplify';
+import { useRouter } from 'next/navigation';
 
 const Navbar = (props: {
   onOpenSidenav: () => void;
@@ -20,6 +22,8 @@ const Navbar = (props: {
   const [darkmode, setDarkmode] = React.useState(
     document.body.classList.contains('dark'),
   );
+
+  const router = useRouter();
 
   return (
     <nav className="sticky top-4 z-40 flex flex-row flex-wrap items-center justify-between rounded-xl bg-white/10 p-2 backdrop-blur-xl dark:bg-[#0b14374d]">
@@ -145,7 +149,14 @@ const Navbar = (props: {
                 Newsletter Settings
               </a>
               <a
-                href=" "
+                onClick={async (e) => {
+                  try {
+                    await Auth.signOut();
+                    router.push('/auth/sign-in');
+                  } catch (error) {
+                    console.log('error signing out: ', error);
+                  }
+                }}
                 className="mt-3 text-sm font-medium text-red-500 hover:text-red-500"
               >
                 Log Out

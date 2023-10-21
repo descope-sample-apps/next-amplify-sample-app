@@ -12,7 +12,7 @@ export async function getServerSideProps(context) {
 
   try {
     const user = await Auth.currentAuthenticatedUser();
-
+    console.log(user);
     return {
       props: {
         authenticated: true,
