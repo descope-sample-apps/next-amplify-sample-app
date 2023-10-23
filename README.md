@@ -2,6 +2,7 @@
 
 ---
 
+
 This sample app is an open-source sample app, built with Next 13 and the Amplify SDK. You can deploy this SSR app in Amplify with the button below. This project also showcases how to store and display user information on a dashboard page and use Next 13's app routing with the Amplify SDK.
 
 You can one-click deploy this app in Amplify, but you'll also need to set up your Cognito User Pool and Amplify Settings in order for the app to work properly. You can do so by following the guide [here]().
