@@ -38,9 +38,13 @@ yarn install
 
 Use the `.env.example` file in the repo, and change the name to `.env`. Then, fill in the following variables with your own information:
 
-1. **Client ID** - This will be your Descope Project ID, which you can find under [Project Settings](https://app.descope.com/settings/project), in the console.
+1. **NEXT_PUBLIC_USER_POOL_ID** - This will be your [User Pool ID](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html) from Cognito (e.g. us-west-2_ifNfd3LI)
 
-2. **Client Secret** - A Descope Access Key you can generate under [Access Keys](https://app.descope.com/accesskeys), in the console.
+2. **NEXT_PUBLIC_AWS_REGION** - Your [AWS Region](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html) (e.g. us-west-1)
+
+3. **NEXT_PUBLIC_USER_POOL_CLIENT_ID** - Your [User Pool Client ID](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-client-apps.html) of the app that you created in your user pool settings.
+
+4. **NEXT_PUBLIC_OAUTH_DOMAIN** - This is the [Cognito domain](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html) of your user pool. (e.g. `next-1-dev.auth.us-west-2.amazoncognito.com`)
 
 ## Running the Application 🚀
 
