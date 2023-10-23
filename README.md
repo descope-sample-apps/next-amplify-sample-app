@@ -7,7 +7,7 @@ This sample app is an open-source sample app, built with Next 13 and the Amplify
 
 You can one-click deploy this app in Amplify, but you'll also need to set up your Cognito User Pool and Amplify Settings in order for the app to work properly. You can do so by following the guide [here]().
 
-[![amplifybutton](https://res.cloudinary.com/practicaldev/image/fetch/s--ubBy37ks--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://oneclick.amplifyapp.com/button.svg)](https://console.aws.amazon.com/amplify/home#/deploy?repo=https://github.com/descope-sample-apps/next-amplify-sample-app/)
+[![amplifybutton](https://res.cloudinary.com/practicaldev/image/fetch/s--ubBy37ks--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://oneclick.amplifyapp.com/button.svg)](https://console.aws.amazon.com/amplify/home#/deploy?repo=https://github.com/descope-sample-apps/next-amplify-sample-app)
 
 ## Table of Contents 📝
 
