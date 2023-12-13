@@ -3,7 +3,10 @@ import banner from '/public/img/profile/banner.png';
 import Card from 'components/card';
 import Image from 'next/image';
 
-const Banner = () => {
+import type { WithAuthenticatorProps } from '@aws-amplify/ui-react';
+import { withAuthenticator } from '@aws-amplify/ui-react';
+
+const Banner = ({ user }: WithAuthenticatorProps) => {
   return (
     <Card extra={'items-center w-full h-full p-[16px] bg-cover'}>
       {/* Background and profile */}
@@ -25,7 +28,7 @@ const Banner = () => {
       {/* Name and position */}
       <div className="mt-16 flex flex-col items-center">
         <h4 className="text-xl font-bold text-navy-700 dark:text-white">
-          Adela Parkson
+          {user.username}
         </h4>
         <h5 className="text-base font-normal text-gray-600">Product Manager</h5>
       </div>
@@ -55,4 +58,4 @@ const Banner = () => {
   );
 };
 
-export default Banner;
+export default withAuthenticator(Banner);

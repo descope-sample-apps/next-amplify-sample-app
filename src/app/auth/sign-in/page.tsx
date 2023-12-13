@@ -5,25 +5,27 @@ import Default from 'components/auth/variants/DefaultAuthLayout';
 import Image from 'next/image';
 import DescopeLogo from '/public/img/auth/descope-logo.png';
 import Checkbox from 'components/checkbox';
-import { Amplify, Auth } from 'aws-amplify';
-import awsExports from '../../../aws-exports';
+import { Amplify } from 'aws-amplify';
+import config from '../../../amplifyconfiguration.json';
+import { signInWithRedirect, signIn } from 'aws-amplify/auth';
 
+// Replace with config from AmplifyConfiguration.json
 Amplify.configure({
   Auth: {
-    region: process.env.NEXT_PUBLIC_AWS_REGION,
-    userPoolId: process.env.NEXT_PUBLIC_USER_POOL_ID,
-    userPoolWebClientId: process.env.NEXT_PUBLIC_USER_POOL_CLIENT_ID,
-    mandatorySignIn: false,
-    authenticationFlowType: 'USER_PASSWORD_AUTH',
-    oauth: {
-      domain: `${process.env.NEXT_PUBLIC_OAUTH_DOMAIN}`,
-      scope: ['openid', 'email', 'phone', 'profile'],
-      redirectSignIn: 'http://localhost:3000/',
-      redirectSignOut: 'http://localhost:3000/auth/sign-in/',
-      responseType: 'code',
+    Cognito: {
+      userPoolId: process.env.NEXT_PUBLIC_USER_POOL_ID,
+      userPoolClientId: process.env.NEXT_PUBLIC_USER_POOL_CLIENT_ID,
+      loginWith: {
+        oauth: {
+          domain: `${process.env.NEXT_PUBLIC_OAUTH_DOMAIN}`,
+          scopes: ['openid', 'email', 'phone', 'profile'],
+          redirectSignIn: ['http://localhost:3000/'],
+          redirectSignOut: ['http://localhost:3000/'],
+          responseType: 'code',
+        },
+      },
     },
   },
-  ssr: true,
 });
 
 export type FederatedSignInOptionsCustom = {
@@ -38,7 +40,7 @@ function SignInDefault() {
 
   const handleSignIn = async () => {
     try {
-      const user = await Auth.signIn(email, password);
+      const user = await signIn({ username: email, password: password });
       // handle successful sign in, perhaps by redirecting the user or changing the component state
       console.log('User signed in:', user);
     } catch (err) {
@@ -62,7 +64,7 @@ function SignInDefault() {
             </p>
             <button
               onClick={() =>
-                Auth.federatedSignIn({ customProvider: 'Descope' })
+                signInWithRedirect({ provider: { custom: 'Descope' } })
               }
               className="mb-6 flex h-[50px] w-full items-center justify-center gap-2 rounded-xl bg-lightPrimary hover:cursor-pointer dark:bg-navy-800 dark:text-white"
             >
@@ -87,7 +89,6 @@ function SignInDefault() {
               type="text"
               onChange={(e) => setEmail(e.target.value)}
             />
-
             {/* Password */}
             <InputField
               variant="auth"

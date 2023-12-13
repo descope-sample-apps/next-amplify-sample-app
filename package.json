@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@aws-amplify/ui-react": "^5.3.1",
+    "@aws-amplify/adapter-nextjs": "^1.0.7",
+    "@aws-amplify/ui-react": "^6.0.6",
     "@chakra-ui/hooks": "^2.1.4",
     "@chakra-ui/modal": "^2.2.9",
     "@chakra-ui/popover": "^2.1.8",
@@ -19,7 +20,7 @@
     "@types/jest": "^25.2.3",
     "@types/react-dom": "^18.0.6",
     "apexcharts": "3.35.5",
-    "aws-amplify": "^5.3.11",
+    "aws-amplify": "^6.0.7",
     "axios": "^1.5.1",
     "framer-motion": "^7.10.2",
     "next": "^13.3.2",

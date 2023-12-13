@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Dropdown from 'components/dropdown';
 import { FiAlignJustify } from 'react-icons/fi';
 import NavLink from 'components/link/NavLink';
@@ -7,9 +7,7 @@ import { RiMoonFill, RiSunFill } from 'react-icons/ri';
 import { IoMdNotificationsOutline } from 'react-icons/io';
 import avatar from '/public/img/avatars/avatar1.png';
 import Image from 'next/image';
-import { headers } from 'next/headers';
-import { redirect } from 'next/navigation';
-import { Auth } from 'aws-amplify';
+import { getCurrentUser, signOut } from 'aws-amplify/auth';
 import { useRouter } from 'next/navigation';
 
 const Navbar = (props: {
@@ -24,6 +22,20 @@ const Navbar = (props: {
   );
 
   const router = useRouter();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    checkAuthenticatedUser();
+  });
+
+  async function checkAuthenticatedUser() {
+    try {
+      const { username } = await getCurrentUser();
+      setIsLoggedIn(true);
+    } catch (err) {
+      setIsLoggedIn(false);
+    }
+  }
 
   return (
     <nav className="sticky top-4 z-40 flex flex-row flex-wrap items-center justify-between rounded-xl bg-white/10 p-2 backdrop-blur-xl dark:bg-[#0b14374d]">
@@ -130,7 +142,7 @@ const Navbar = (props: {
               <div className="flex items-center gap-2">
                 <p className="text-sm font-bold text-navy-700 dark:text-white">
                   👋 Hey
-                </p>{' '}
+                </p>
               </div>
             </div>
             <div className="mt-3 h-px w-full bg-gray-200 dark:bg-white/20 " />
@@ -148,19 +160,29 @@ const Navbar = (props: {
               >
                 Newsletter Settings
               </a>
-              <a
-                onClick={async (e) => {
-                  try {
-                    await Auth.signOut();
-                    router.push('/auth/sign-in');
-                  } catch (error) {
-                    console.log('error signing out: ', error);
-                  }
-                }}
-                className="mt-3 text-sm font-medium text-red-500 hover:text-red-500"
-              >
-                Log Out
-              </a>
+              {!isLoggedIn && (
+                <a
+                  onClick={() => router.push('/auth/sign-in')}
+                  className="mt-3 text-sm font-medium text-green-500 hover:text-green-500"
+                >
+                  Log In
+                </a>
+              )}
+              {isLoggedIn && (
+                <a
+                  onClick={async (e) => {
+                    try {
+                      await signOut();
+                      router.push('/auth/sign-in');
+                    } catch (error) {
+                      console.log('error signing out: ', error);
+                    }
+                  }}
+                  className="mt-3 text-sm font-medium text-red-500 hover:text-red-500"
+                >
+                  Log Out
+                </a>
+              )}
             </div>
           </div>
         </Dropdown>

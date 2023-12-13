@@ -1,5 +1,5 @@
-import React from "react";
-import Chart from "react-apexcharts";
+import React from 'react';
+import Chart from 'react-apexcharts';
 
 type ChartProps = {
   // using `interface` is also ok
