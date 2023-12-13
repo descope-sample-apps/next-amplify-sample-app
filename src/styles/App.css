@@ -6,3 +6,7 @@ body {
 option {
   color: black;
 }
+
+.amplify-tabs {
+  display: none;
+}

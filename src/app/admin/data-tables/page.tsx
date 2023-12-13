@@ -8,10 +8,6 @@ import DevelopmentTable from 'components/admin/data-tables/DevelopmentTable';
 import ColumnsTable from 'components/admin/data-tables/ColumnsTable';
 import ComplexTable from 'components/admin/data-tables/ComplexTable';
 
-import { useEffect, useState } from 'react';
-import { getCurrentUser } from 'aws-amplify/auth';
-
-import type { WithAuthenticatorProps } from '@aws-amplify/ui-react';
 import { withAuthenticator } from '@aws-amplify/ui-react';
 import { Amplify } from 'aws-amplify';
 
