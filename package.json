@@ -23,7 +23,7 @@
     "aws-amplify": "^6.0.7",
     "axios": "^1.5.1",
     "framer-motion": "^7.10.2",
-    "next": "^15.5.10",
+    "next": "^16.0.10",
     "next-transpile-modules": "^9.0.0",
     "react": "^18.2.0",
     "react-apexcharts": "1.4.0",
