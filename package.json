@@ -24,7 +24,7 @@
     "axios": "^1.5.1",
     "framer-motion": "^7.10.2",
     "next": "^16.0.10",
-    "next-transpile-modules": "^9.0.0",
+    "next-transpile-modules": "^10.0.0",
     "react": "^18.2.0",
     "react-apexcharts": "1.4.0",
     "react-calendar": "^3.9.0",
